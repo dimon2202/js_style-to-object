@@ -8,8 +8,8 @@
 function convertToObject(sourceString) {
   const keyValuePairs = sourceString
     .split(';')
-    .map((style) => style.split(':').map((i) => i.trim()))
-    .filter((x) => x.length === 2);
+    .map((style) => style.split(':').map((part) => part.trim()))
+    .filter((declaration) => declaration.length === 2);
 
   return Object.fromEntries(keyValuePairs);
 }
